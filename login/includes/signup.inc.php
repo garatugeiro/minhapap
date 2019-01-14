@@ -44,11 +44,11 @@ if (isset($_POST['submit'])) {
                     exit();              
                 } else  {
                     //Hashing the password
-                    $hashedPdw = password_hash($pwd, PASSWORD_DEFAULT);
+                    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
                     //Insert the user into the database
                     $sql = "INSERT INTO users (user_first, user_last,
                     user_email, user_uid, user_pwd) VALUES ('$first?, '$last',
-                     '$email', '$uid', '$hashedPdw');";
+                     '$email', '$uid', '$hashedPwd');";
                 $result = mysqli_query($conn, $sql);
                 header("Location: ../signup.php?signup=success");
                 exit();
@@ -62,4 +62,4 @@ if (isset($_POST['submit'])) {
 }   else {
     header("Location: ../signup.php");
     exit();
-}
+};
